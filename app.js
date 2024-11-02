@@ -3,6 +3,7 @@ const app=new express();
 const mongoose=require('mongoose');
 const bodyparser=require("body-parser");
 const UserRouter = require('./route/user.route');
+const ChannelRouter = require('./route/channel.route');
 
 
 
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
   });
 
 app.use("/user",UserRouter);
+app.use("/channel",ChannelRouter);
 
 //listening to the server at port 3000
 app.listen(3000,()=>{
