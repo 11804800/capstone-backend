@@ -4,6 +4,7 @@ const mongoose=require('mongoose');
 const bodyparser=require("body-parser");
 const UserRouter = require('./route/user.route');
 const ChannelRouter = require('./route/channel.route');
+const VideoRouter = require('./route/video.route');
 
 
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 
 app.use("/user",UserRouter);
 app.use("/channel",ChannelRouter);
+app.use("/video",VideoRouter);
 
 //listening to the server at port 3000
 app.listen(3000,()=>{

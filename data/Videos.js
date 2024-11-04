@@ -18,8 +18,7 @@ const Data=[
         text: "Great video! Very helpful.",
         timestamp: "2024-09-21T08:30:00Z",
       },
-    ],
-    Date: "",
+    ]
   },
 ];
 
