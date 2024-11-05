@@ -28,7 +28,12 @@ const ChannelSchema = mongoose.Schema(
     //it will store only the ids of the videos
     videos:[
 
-    ]
+    ],
+    //it will store the creator info
+    creator:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"user"
+    }
   },
   {
     timestamps: true,

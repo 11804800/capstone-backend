@@ -1,7 +1,7 @@
 const express=require('express');
 const bodyparser=require("body-parser");
 //controller functions
-const { GetAllChannel, PostNewChannel, UpdateChannel, DeleteChannel } = require('../controller/channel.controller');
+const { GetAllChannel, PostNewChannel, UpdateChannel, DeleteChannel, PushVideo, DeleteVideo } = require('../controller/channel.controller');
 //middleware defined to verify the user
 const { VerifyUser } = require('../middleware/Authentication');
 
@@ -19,5 +19,11 @@ ChannelRouter.put("/:name",VerifyUser,UpdateChannel);
 
 //for Deleting the channel record
 ChannelRouter.delete("/:name",VerifyUser,DeleteChannel);
+
+//for adding new video to channel
+ChannelRouter.post("/:id/video",PushVideo);
+
+//for deleting the video
+ChannelRouter.delete("/:id/video/:videoId",DeleteVideo);
 
 module.exports=ChannelRouter;

@@ -8,6 +8,8 @@ const {
   DeleteUser,
   UserSignup,
   UserLogin,
+  Subscribe,
+  UnSubscribe,
 } = require("../controller/user.controller");
 const UserRouter = express.Router();
 UserRouter.use(bodyparser.json());
@@ -26,6 +28,12 @@ UserRouter.put("/:username", UpdateUserInfo);
 
 //delete Method for deleting the user info
 UserRouter.delete("/", DeleteUser);
+
+//Subscribing
+UserRouter.post("/:username/subscribe",Subscribe);
+
+//unsubcribing
+UserRouter.delete("/:username/unsubcribe/:ChannelId",UnSubscribe);
 
 
 //exporting the userrouter
