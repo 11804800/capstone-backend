@@ -108,10 +108,11 @@ function PostComment(req, res) {
     .then(
       (videos) => {
         //pushing the data value in front
-        videos.comments.unshift(req.body);
+        videos.comments.push(req.body);
         //saving the comment data
         videos.save();
-        res.status(201).json({ videos: videos });
+        
+        res.status(201).json({ videos: videos?.comments });
       },
       (err) => res.status(500).json({ err: err })
     )
